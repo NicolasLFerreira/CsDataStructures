@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace CSDataStructures.CLinkedList
 {
-    class CNode<T>
+    class LLNode<T>
     {
-        public CNode() { }
-        public CNode(T data)
+        public LLNode() { }
+        public LLNode(T data)
         {
             Data = data;
             Point = null;
         }
 
         public T Data { get; set; }
-        public CNode<T> Point { get; set; }
+        public LLNode<T> Point { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace CSDataStructures
         static void Main(string[] args)
         {
             CHashTable<int> h = new CHashTable<int>(2);
-            CLinkedList<int> cll = new CLinkedList<int>();
+            CLinkedList.LinkedList<int> cll = new CLinkedList.LinkedList<int>();
 
             cll.Add(123);
             cll.Add(69);
@@ -25,9 +25,6 @@ namespace CSDataStructures
             Console.WriteLine(cll.Get(2));
 
             //--------------------------------------//
-
-            LinkedList<int> ll = new LinkedList<int>();
-            List<int> l = new List<int>();
 
             Console.ReadKey();
         }

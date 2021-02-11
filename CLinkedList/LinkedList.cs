@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 
 namespace CSDataStructures.CLinkedList
 {
-    class CLinkedList<T>
+    class LinkedList<T>
     {
-        public CLinkedList() { }
+        public LinkedList() { }
 
-        public CNode<T> Head { get; private set; }
-        public CNode<T> Tail { get; private set; }
+        public LLNode<T> Head { get; private set; }
+        public LLNode<T> Tail { get; private set; }
 
         public void Add(T data)
         {
             if (Head == null)
             {
-                Head = new CNode<T>(data);
+                Head = new LLNode<T>(data);
                 Tail = Head;
             }
             else
             {
-                Tail.Point = new CNode<T>(data);
+                Tail.Point = new LLNode<T>(data);
                 Tail = Tail.Point;
             }
         }
 
-        private CNode<T> GetNode(int index)
+        private LLNode<T> GetNode(int index)
         {
-            CNode<T> current = Head;
+            LLNode<T> current = Head;
             for (int i = 0; i < index; i++)
             {
                 if (current.Point == null) return default;
@@ -42,7 +42,7 @@ namespace CSDataStructures.CLinkedList
 
         public void Delete(int index)
         {
-            CNode<T> current = GetNode(index - 1);
+            LLNode<T> current = GetNode(index - 1);
             current.Point = current.Point.Point;
         }
     }

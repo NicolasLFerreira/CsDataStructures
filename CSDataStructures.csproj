@@ -43,14 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graph\CGraph.cs" />
-    <Compile Include="CLinkedList\CLinkedList.cs" />
-    <Compile Include="CLinkedList\CNode.cs" />
+    <Compile Include="Graph\Node.cs" />
+    <Compile Include="Graph\Graph.cs" />
+    <Compile Include="CLinkedList\LinkedList.cs" />
+    <Compile Include="CLinkedList\LLNode.cs" />
     <Compile Include="HashTable\CContent.cs" />
     <Compile Include="HashTable\CHashTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tree\CBinaryTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
