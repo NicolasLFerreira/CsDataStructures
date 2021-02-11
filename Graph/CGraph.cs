@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSDataStructures.Graph
 {
-    class Graph
+    class CGraph
     {
         
     }

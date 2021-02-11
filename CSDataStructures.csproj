@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graph\Node.cs" />
-    <Compile Include="Graph\Graph.cs" />
-    <Compile Include="CLinkedList\LinkedList.cs" />
-    <Compile Include="CLinkedList\LLNode.cs" />
+    <Compile Include="Graph\GNode.cs" />
+    <Compile Include="Graph\CGraph.cs" />
+    <Compile Include="CLinkedList\CLinkedList.cs" />
+    <Compile Include="CLinkedList\CNode.cs" />
     <Compile Include="HashTable\CContent.cs" />
     <Compile Include="HashTable\CHashTable.cs" />
     <Compile Include="Program.cs" />

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSDataStructures.CLinkedList
 {
-    class LinkedList<T>
+    class CLinkedList<T>
     {
-        public LinkedList() { }
+        public CLinkedList() { }
 
         public LLNode<T> Head { get; private set; }
         public LLNode<T> Tail { get; private set; }
