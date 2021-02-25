@@ -1,4 +1,5 @@
 ﻿using System;
+
 using CSDataStructures.CLinkedList;
 
 namespace CSDataStructures.HashTable
@@ -22,7 +23,7 @@ namespace CSDataStructures.HashTable
             {
                 index += key[0];
             }
-            return index % (Table.Length * 13);
+            return (index * 13) % Table.Length;
         }
 
         // Adds a new item to a bucket
@@ -31,6 +32,18 @@ namespace CSDataStructures.HashTable
             int hash = Hashing(key);
             if (Table[hash] == null) Table[hash] = new CLinkedList<CContent<T>>();
             Table[hash].Add(new CContent<T>(key, data));
+        }
+
+        public T this[string key]
+        {
+            get
+            {
+                return Get(key);
+            }
+            set 
+            {
+                Add(key, (T)value);
+            }
         }
 
         // Returns the data of a bucket
