@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace CSDataStructures.Graph
 {
-    class GNode
+    class GNode<T>
     {
         public string Name { get; set; }
-        public int Data { get; set; }
-        public List<GNode> Successors { get; set; }
-        public List<GNode> Predecessors { get; set; }
+        public T Data { get; set; }
+        public List<GNode<T>> Successors { get; set; }
+        public List<GNode<T>> Predecessors { get; set; }
 
-        public GNode(string name, int data = 1)
+        public GNode(string name, T data = default)
         {
             Data = data;
 
-            Successors = new List<GNode>();
-            Predecessors = new List<GNode>();
+            Successors = new List<GNode<T>>();
+            Predecessors = new List<GNode<T>>();
         }
 
-        public void Add(GNode node)
+        public void Add(GNode<T> node)
         {
             Successors.Add(node);
             if (!node.Predecessors.Contains(this)) node.Predecessors.Add(this);

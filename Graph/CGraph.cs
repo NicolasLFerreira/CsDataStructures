@@ -8,6 +8,6 @@ namespace CSDataStructures.Graph
 {
     class CGraph
     {
-        
+
     }
 }
