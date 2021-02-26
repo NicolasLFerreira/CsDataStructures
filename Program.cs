@@ -4,7 +4,7 @@ using CSDataStructures.CLinkedList;
 using CSDataStructures.HashTable;
 using CSDataStructures.Graph;
 
-using CSDataStructures.Algorithms.Search;
+using CSDataStructures.Algorithms;
 
 namespace CSDataStructures
 {
@@ -12,24 +12,28 @@ namespace CSDataStructures
     {
         static void Main(string[] args)
         {
-            Search s = new Search();
+            Sorting s = new Sorting();
+            Random r = new Random((int)(DateTime.Now.Ticks % int.MaxValue));
 
-            int[] arr = new int[48];
-            int number = 0;
+            int[] array = new int[100];
+            int[] arr;
+            int n;
 
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                number += i;
-                Console.WriteLine($"{number} : {i}");
-
-                arr[i] = number;
+                n = r.Next(100);
+                array[i] = n;
+                Console.WriteLine(n);
             }
 
-            Console.WriteLine(number);
+            Console.WriteLine();
 
-            Console.WriteLine($"Jump search: {s.JumpSearch(arr, 78, arr.Length / 6)}");
-            Console.WriteLine($"Improved linear search search: {s.ImprovedLinearSearch(arr, 231)}");
-            Console.WriteLine($"Binary search: {s.BinarySearch(arr, 406)}");
+            arr = s.MySort(array);
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(arr[i]);
+            }
 
             Console.ReadKey();
         }

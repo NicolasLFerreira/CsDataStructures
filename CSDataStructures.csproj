@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\Search.cs" />
+    <Compile Include="Algorithms\Sorting.cs" />
     <Compile Include="DataStructures\Graph\GNode.cs" />
     <Compile Include="DataStructures\Graph\CGraph.cs" />
     <Compile Include="DataStructures\CLinkedList\CLinkedList.cs" />
