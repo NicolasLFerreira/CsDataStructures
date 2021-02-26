@@ -10,7 +10,8 @@ namespace CSDataStructures.Algorithms.Search
     {
         public int JumpSearch(int[] array, int value, int step)
         {
-            for (int i = 0; i < array.Length; i += step)
+            int length = array.Length;
+            for (int i = 0; i < length; i += step)
             {
                 if (array[i] == value) return i;
                 if (array[i] > value)
@@ -41,7 +42,20 @@ namespace CSDataStructures.Algorithms.Search
 
         public int BinarySearch(int[] array, int value)
         {
+            int length = array.Length;
+            int mid;
+            int left = 0;
+            int right = length - 1;
+            while (left <= right)
+            {
+                mid = (left + right) / 2;
 
+                if (array[mid] == value) return mid;
+
+                if (array[mid] > value) right = mid - 1;
+                if (array[mid] < value) left = mid + 1;
+            }
+            return -1;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace CSDataStructures
         {
             Search s = new Search();
 
-            int[] arr = new int[24];
+            int[] arr = new int[48];
             int number = 0;
 
             for (int i = 0; i < arr.Length; i++)
@@ -28,7 +28,8 @@ namespace CSDataStructures
             Console.WriteLine(number);
 
             Console.WriteLine($"Jump search: {s.JumpSearch(arr, 78, arr.Length / 6)}");
-            Console.WriteLine($"Binary search: {s.ImprovedLinearSearch(arr, 231)}");
+            Console.WriteLine($"Improved linear search search: {s.ImprovedLinearSearch(arr, 231)}");
+            Console.WriteLine($"Binary search: {s.BinarySearch(arr, 406)}");
 
             Console.ReadKey();
         }
