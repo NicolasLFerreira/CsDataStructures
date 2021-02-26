@@ -43,20 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graph\GNode.cs" />
-    <Compile Include="Graph\CGraph.cs" />
-    <Compile Include="CLinkedList\CLinkedList.cs" />
-    <Compile Include="CLinkedList\CNode.cs" />
-    <Compile Include="HashTable\CContent.cs" />
-    <Compile Include="HashTable\CHashTable.cs" />
+    <Compile Include="Algorithms\Search.cs" />
+    <Compile Include="DataStructures\Graph\GNode.cs" />
+    <Compile Include="DataStructures\Graph\CGraph.cs" />
+    <Compile Include="DataStructures\CLinkedList\CLinkedList.cs" />
+    <Compile Include="DataStructures\CLinkedList\CNode.cs" />
+    <Compile Include="DataStructures\HashTable\CContent.cs" />
+    <Compile Include="DataStructures\HashTable\CHashTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tree\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
