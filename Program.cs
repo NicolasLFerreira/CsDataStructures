@@ -15,24 +15,25 @@ namespace CSDataStructures
             Sorting s = new Sorting();
             Random r = new Random((int)(DateTime.Now.Ticks % int.MaxValue));
 
-            int[] array = new int[100];
-            int[] arr;
+            int size = 10;
             int n;
+            int[] array = new int[size];
+            int[] arr;
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < size; i++)
             {
-                n = r.Next(100);
+                n = r.Next(size * 2);
                 array[i] = n;
                 Console.WriteLine(n);
             }
 
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
-            arr = s.MySort(array);
+            arr = s.InsertionSort(array);
 
             for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine(arr[i]);
+                Console.WriteLine("-> " + arr[i]);
             }
 
             Console.ReadKey();
