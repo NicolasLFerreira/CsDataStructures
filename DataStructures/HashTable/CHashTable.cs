@@ -1,8 +1,8 @@
 ﻿using System;
 
-using CSDataStructures.CLinkedList;
+using CSDataStructures.DataStructures.CLinkedList;
 
-namespace CSDataStructures.HashTable
+namespace CSDataStructures.DataStructures.HashTable
 {
     class CHashTable<T>
     {

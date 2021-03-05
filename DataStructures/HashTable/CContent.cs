@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSDataStructures.HashTable
+namespace CSDataStructures.DataStructures.HashTable
 {
     struct CContent<T>
     {
