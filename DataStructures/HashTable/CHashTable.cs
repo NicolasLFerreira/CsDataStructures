@@ -9,11 +9,11 @@ namespace CSDataStructures.DataStructures.HashTable
         // Constructor. Creates an array with certain size
         public CHashTable(int size)
         {
-            Table = new CLinkedList<CContent<T>>[size];
+            Table = new LinkedList<CContent<T>>[size];
         }
 
         // Array of buckets
-        private CLinkedList<CContent<T>>[] Table { get; set; }
+        private LinkedList<CContent<T>>[] Table { get; set; }
 
         // Hashing algorithm
         public int Hashing(string key)
@@ -30,7 +30,7 @@ namespace CSDataStructures.DataStructures.HashTable
         public void Add(string key, T data)
         {
             int hash = Hashing(key);
-            if (Table[hash] == null) Table[hash] = new CLinkedList<CContent<T>>();
+            if (Table[hash] == null) Table[hash] = new LinkedList<CContent<T>>();
             Table[hash].Add(new CContent<T>(key, data));
         }
 
@@ -49,7 +49,7 @@ namespace CSDataStructures.DataStructures.HashTable
         // Returns the data of a bucket
         public T Get(string key)
         {
-            LLNode<CContent<T>> currentNode;
+            Node<CContent<T>> currentNode;
             int hash = Hashing(key);
 
             if (Table[hash] == null) return default;

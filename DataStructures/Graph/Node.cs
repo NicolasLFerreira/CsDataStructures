@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSDataStructures.DataStructures.Graph
 {
@@ -16,6 +13,7 @@ namespace CSDataStructures.DataStructures.Graph
         {
             Data = data;
             Visited = false;
+            Neighbors = new List<Node<T>>();
         }
 
         public Node(T data, List<Node<T>> neighbors)
@@ -25,19 +23,20 @@ namespace CSDataStructures.DataStructures.Graph
             Visited = false;
         }
 
-        public void AddNeighbor(Node<T> vertex)
+        public void AddNeighbor(Node<T> node)
         {
-            Neighbors.Add(vertex);
+            if (!Neighbors.Contains(node)) Neighbors.Add(node);
+            if (!node.Neighbors.Contains(this)) node.Neighbors.Add(this);
         }
 
-        public void AddNeighbor(List<Node<T>> vertices)
+        public void AddNeighbor(List<Node<T>> nodes)
         {
-            Neighbors.AddRange(vertices);
+            Neighbors.AddRange(nodes);
         }
 
-        public void RemoveNeighbor(Node<T> vertex)
+        public void RemoveNeighbor(Node<T> node)
         {
-            if (Neighbors.Contains(vertex)) Neighbors.Remove(vertex);
+            if (Neighbors.Contains(node)) Neighbors.Remove(node);
             else throw new Exception();
         }
 

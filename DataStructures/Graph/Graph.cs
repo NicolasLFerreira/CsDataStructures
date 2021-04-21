@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSDataStructures.DataStructures.Graph
 {
@@ -49,10 +47,11 @@ namespace CSDataStructures.DataStructures.Graph
         {
             if (!root.Visited)
             {
-                Console.WriteLine($"{root.Data} -> ");
+                
                 root.Visit();
                 foreach (Node<T> neighbor in root.Neighbors)
                 {
+                    Console.WriteLine($"{root.Data} -> {neighbor.Data}");
                     DepthFirstSearch(neighbor);
                 }
             }
@@ -72,9 +71,13 @@ namespace CSDataStructures.DataStructures.Graph
 
                 foreach (Node<T> neighbor in current.Neighbors)
                 {
-                    Console.WriteLine(neighbor.Data);
-                    neighbor.Visit();
-                    queue.Enqueue(neighbor);
+                    Console.WriteLine($"{current.Data} -> {neighbor.Data}");
+
+                    if (!neighbor.Visited)
+                    {
+                        neighbor.Visit();
+                        queue.Enqueue(neighbor);
+                    }
                 }
             }
         }
