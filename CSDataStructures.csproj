@@ -46,11 +46,12 @@
     <Compile Include="Algorithms\Search.cs" />
     <Compile Include="Algorithms\Sorting.cs" />
     <Compile Include="DataStructures\Graph\Graph.cs" />
-    <Compile Include="DataStructures\CLinkedList\CLinkedList.cs" />
-    <Compile Include="DataStructures\CLinkedList\CNode.cs" />
+    <Compile Include="DataStructures\LinkedList\LinkedList.cs" />
+    <Compile Include="DataStructures\LinkedList\Node.cs" />
     <Compile Include="DataStructures\Graph\Node.cs" />
-    <Compile Include="DataStructures\HashTable\CContent.cs" />
-    <Compile Include="DataStructures\HashTable\CHashTable.cs" />
+    <Compile Include="DataStructures\HashTable\Content.cs" />
+    <Compile Include="DataStructures\HashTable\HashTable.cs" />
+    <Compile Include="DataStructures\Tree\BinaryTree.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

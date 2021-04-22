@@ -1,5 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+
+using CSDataStructures.DataStructures.Tree;
+using CSDataStructures.DataStructures.HashTable;
 
 namespace CSDataStructures
 {
@@ -7,9 +9,21 @@ namespace CSDataStructures
     {
         public static void Main()
         {
-            for (int i = 0; i < 256; i++) Console.WriteLine(i + ": " + (char)i);
-            Console.ReadKey();
+            HashTable<int> age = new HashTable<int>(1);
 
+            int amount = 15;
+
+            for (int i = 0; i < amount; i++)
+            {
+                age[$"Person {i}"] = i;
+            }
+
+            for (int i = 0; i < amount; i++)
+            {
+                Console.WriteLine(age[$"Person {i}"]);
+            }
+
+            Console.ReadLine();
         }
     }
 }
