@@ -2,9 +2,9 @@
 
 namespace CSDataStructures.DataStructures.HashTable
 {
-    struct CContent<T>
+    struct Content<T>
     {
-        public CContent(string key, T data)
+        public Content(string key, T data)
         {
             Key = key;
             Data = data;
