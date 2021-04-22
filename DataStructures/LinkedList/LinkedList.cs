@@ -1,13 +1,17 @@
 ﻿using System;
 
-namespace CSDataStructures.DataStructures.CLinkedList
+namespace CSDataStructures.DataStructures.LinkedList
 {
     class LinkedList<T>
     {
-        public LinkedList() { }
-
         public Node<T> Head { get; private set; }
         public Node<T> Tail { get; private set; }
+        public int Count { get; private set; }
+
+        public LinkedList()
+        {
+            Count = 0;
+        }
 
         public void Add(T data)
         {
@@ -18,9 +22,10 @@ namespace CSDataStructures.DataStructures.CLinkedList
             }
             else
             {
-                Tail.Point = new Node<T>(data);
-                Tail = Tail.Point;
+                Tail.Next = new Node<T>(data);
+                Tail = Tail.Next;
             }
+            Count++;
         }
 
         private Node<T> GetNode(int index)
@@ -28,8 +33,8 @@ namespace CSDataStructures.DataStructures.CLinkedList
             Node<T> current = Head;
             for (int i = 0; i < index; i++)
             {
-                if (current.Point == null) return default;
-                current = current.Point;
+                if (current.Next == null) return default;
+                current = current.Next;
             }
             return current;
         }
@@ -39,7 +44,8 @@ namespace CSDataStructures.DataStructures.CLinkedList
         public void Delete(int index)
         {
             Node<T> current = GetNode(index - 1);
-            current.Point = current.Point.Point;
+            current.Next = current.Next.Next;
+            Count--;
         }
     }
 }

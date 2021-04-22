@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSDataStructures.DataStructures.CLinkedList
+namespace CSDataStructures.DataStructures.LinkedList
 {
     class Node<T>
     {
@@ -8,10 +8,10 @@ namespace CSDataStructures.DataStructures.CLinkedList
         public Node(T data)
         {
             Data = data;
-            Point = null;
+            Next = null;
         }
 
         public T Data { get; set; }
-        public Node<T> Point { get; set; }
+        public Node<T> Next { get; set; }
     }
 }
