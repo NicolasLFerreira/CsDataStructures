@@ -7,19 +7,19 @@ namespace CSDataStructures.DataStructures.HashTable
     class HashTable<T>
     {
         // Array of buckets
-        private LinkedList<Content<T>>[] Table { get; set; }
+        private SinglyLinkedList<Content<T>>[] Table { get; set; }
         public int Count { get; private set; }
         public readonly int Size;
 
         // Constructor. Creates an array with certain size
         public HashTable(int size)
         {
-            Table = new LinkedList<Content<T>>[size];
+            Table = new SinglyLinkedList<Content<T>>[size];
             Size = size;
 
             for (int i = 0; i < size; i++)
             {
-                Table[i] = new LinkedList<Content<T>>();
+                Table[i] = new SinglyLinkedList<Content<T>>();
             }
         }
         
@@ -69,7 +69,7 @@ namespace CSDataStructures.DataStructures.HashTable
         public int GetItemPosition(string key)
         {
             int hash = Hashing(key);
-            LinkedList<Content<T>> list = Table[hash];
+            SinglyLinkedList<Content<T>> list = Table[hash];
             Node<Content<T>> node = list.Head;
 
             // Runs through the list to get the index of the item of the certain key
@@ -89,12 +89,12 @@ namespace CSDataStructures.DataStructures.HashTable
         {
             int hash = Hashing(key);
             int position = GetItemPosition(key);
-            LinkedList<Content<T>> list = Table[hash];
+            SinglyLinkedList<Content<T>> list = Table[hash];
 
             // If theres no item with this key, returns
             if (position == -1) return;
 
-            list.Delete(position);
+            //list.Delete(position);
             Count++;
         }
     }

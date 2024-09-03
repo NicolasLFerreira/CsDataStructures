@@ -1,7 +1,9 @@
 ﻿using System;
 
+using CSDataStructures.DataStructures.LinkedList;
 using CSDataStructures.DataStructures.Tree;
 using CSDataStructures.DataStructures.HashTable;
+using System.Collections.Specialized;
 
 namespace CSDataStructures
 {
@@ -9,18 +11,25 @@ namespace CSDataStructures
     {
         public static void Main()
         {
-            HashTable<int> age = new HashTable<int>(1);
+            SinglyLinkedList<int> ints = new SinglyLinkedList<int>();
 
-            int amount = 15;
-
-            for (int i = 0; i < amount; i++)
+            for (int i = 0; i < 10; i++)
             {
-                age[$"Person {i}"] = i;
+                ints.Add(i * 7);
             }
 
-            for (int i = 0; i < amount; i++)
+            foreach (var item in ints)
             {
-                Console.WriteLine(age[$"Person {i}"]);
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+
+            ints.Remove(0);
+
+            foreach (var item in ints)
+            {
+                Console.WriteLine(item);
             }
 
             Console.ReadLine();

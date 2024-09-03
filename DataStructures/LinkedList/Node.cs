@@ -4,14 +4,18 @@ namespace CSDataStructures.DataStructures.LinkedList
 {
     class Node<T>
     {
-        public Node() { }
+        public T Data { get; set; }
+        public Node<T> Next { get; set; }
+
         public Node(T data)
         {
             Data = data;
             Next = null;
         }
 
-        public T Data { get; set; }
-        public Node<T> Next { get; set; }
+        public bool Equals(Node<T> o)
+        {
+            return Data.Equals(o.Data);
+        }
     }
 }

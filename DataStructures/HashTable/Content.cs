@@ -2,7 +2,7 @@
 
 namespace CSDataStructures.DataStructures.HashTable
 {
-    struct Content<T>
+    class Content<T>
     {
         public Content(string key, T data)
         {
