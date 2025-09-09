@@ -2,6 +2,7 @@
 using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Policy;
 
@@ -21,6 +22,8 @@ namespace CSDataStructures.DataStructures.LinkedList
             Count = 0;
         }
 
+        // Add methods
+
         public void AddHead(T item)
         {
             Node<T> newNode = new Node<T>(item);
@@ -33,6 +36,21 @@ namespace CSDataStructures.DataStructures.LinkedList
             {
                 newNode.Next = Head;
                 Head = newNode;
+            }
+        }
+
+        public void AddAtIndex(T item, int index)
+        {
+            Node<T> newNode = new Node<T>(item);
+
+            if (index == Count)
+            {
+                
+            }
+
+            while ()
+            {
+
             }
         }
 
@@ -53,6 +71,36 @@ namespace CSDataStructures.DataStructures.LinkedList
                 Count++;
             }
         }
+
+        // Remove methods
+
+        public bool Remove(T item)
+        {
+            Node<T> current = Head;
+
+            if (Head.Data.Equals(item))
+            {
+                Head = Head.Next;
+                Count--;
+                return true;
+            }
+
+            while (current.Next != null)
+            {
+                if (current.Next.Data.Equals(item))
+                {
+                    current.Next = current.Next.Next;
+                    Count--;
+                    return true;
+                }
+                current = current.Next;
+            }
+            return false;
+        }
+
+        // Get methods
+
+        // Other
 
         public void Clear()
         {
@@ -80,30 +128,6 @@ namespace CSDataStructures.DataStructures.LinkedList
                 if (count >= array.Length) break;
                 array[count++] = item;
             }
-        }
-
-        public bool Remove(T item)
-        {
-            Node<T> current = Head;
-
-            if (Head.Data.Equals(item))
-            {
-                Head = Head.Next;
-                Count--;
-                return true;
-            }
-
-            while (current.Next != null)
-            {
-                if (current.Next.Data.Equals(item))
-                {
-                    current.Next = current.Next.Next;
-                    Count--;
-                    return true;
-                }
-                current = current.Next;
-            }
-            return false;
         }
 
         public IEnumerator<T> GetEnumerator()

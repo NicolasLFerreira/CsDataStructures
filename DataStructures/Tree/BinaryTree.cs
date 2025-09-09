@@ -1,58 +1,54 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace CSDataStructures.DataStructures.Tree
 {
-    class BinaryTree
+    class BinaryTree<T> : ICollection<T>
     {
-        public BinaryTree Left { get; set; }
-        public BinaryTree Right { get; set; }
-
-        public int Data { get; set; }
+        public Node<T> Head;
         
-        public BinaryTree(int data) => Data = data;
-
-        public void Insert(int data)
+        public BinaryTree()
         {
-            if (data <= Data)
-            {
-                if (Left == null) Left = new BinaryTree(data);
-                else Left.Insert(data);
-            }
 
-            if (data > Data)
-            {
-                if (Right == null) Right = new BinaryTree(data);
-                else Right.Insert(data);
-            }
         }
 
-        public bool Contains(int data)
+        public int Count { get; }
+        public bool IsReadOnly { get; }
+
+        public void Add(T item)
         {
-            if (data == Data) return true;
-
-            if (Left != null)
-            {
-                if (data == Left.Data) return true;
-                if (data <= Left.Data) Left.Contains(data);
-            }
-
-            if (Right != null)
-            {
-                if (data == Right.Data) return true;
-                if (data > Right.Data) Right.Contains(data);
-            }
-            return false;
+            throw new NotImplementedException();
         }
 
-        public void PrintInOrder()
+        public void Clear()
         {
-            if (Left != null) Left.PrintInOrder();
-            for (int i = 0; i < Data; i++)
-            {
-                Console.Write('.');
-            }
-            Console.WriteLine();
-            if (Right != null) Right.PrintInOrder();
+            throw new NotImplementedException();
+        }
+
+        public bool Contains(T item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CopyTo(T[] array, int arrayIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Remove(T item)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }

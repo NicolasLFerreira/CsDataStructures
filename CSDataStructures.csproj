@@ -53,6 +53,7 @@
     <Compile Include="DataStructures\HashTable\Content.cs" />
     <Compile Include="DataStructures\HashTable\HashTable.cs" />
     <Compile Include="DataStructures\Tree\BinaryTree.cs" />
+    <Compile Include="DataStructures\Tree\Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
